@@ -41,7 +41,7 @@ starsGeo.setAttribute("position", positionAttribute);
 
 const corsImage = new Image();
 corsImage.crossOrigin = "Anonymous";
-corsImage.src = "https://github.com/VishalZ123/portfolio/blob/WEBD/star.png?raw=true";
+corsImage.src = "/star.png";
 
 const loader = new THREE.TextureLoader();
 var starMaterial = new THREE.PointsMaterial({
