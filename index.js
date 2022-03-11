@@ -39,11 +39,15 @@ for (var i = 0; i < 60000; i++) {
 const positionAttribute = new THREE.BufferAttribute(positionArray, 3);
 starsGeo.setAttribute("position", positionAttribute);
 
+const corsImage = new Image();
+corsImage.crossOrigin = "Anonymous";
+corsImage.src = "https://github.com/VishalZ123/portfolio/blob/WEBD/star.png?raw=true";
+
 const loader = new THREE.TextureLoader();
 var starMaterial = new THREE.PointsMaterial({
   color: 0xffffff,
   size: 1,
-  map: loader.load("https://github.com/VishalZ123/portfolio/blob/WEBD/star.png?raw=true"),
+  map: loader.load(corsImage),
   transparent: true
 });
 var stars = new THREE.Points(starsGeo, starMaterial);
