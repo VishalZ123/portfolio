@@ -43,7 +43,7 @@ const loader = new THREE.TextureLoader();
 var starMaterial = new THREE.PointsMaterial({
   color: 0xffffff,
   size: 1,
-  map: loader.load("star.png"),
+  map: loader.load("https://github.com/VishalZ123/portfolio/blob/WEBD/star.png?raw=true"),
   transparent: true
 });
 var stars = new THREE.Points(starsGeo, starMaterial);
