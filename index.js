@@ -40,7 +40,7 @@ starsGeo.setAttribute("position", positionAttribute);
 
 var img = new Image();
 img.crossOrigin = "anonymous";
-img.src = "star.png";
+img.src = "https://portfolio-peach-tau.vercel.app/star.png";
 
 const loader = new THREE.TextureLoader();
 var starMaterial = new THREE.PointsMaterial({
