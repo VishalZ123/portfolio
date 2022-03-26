@@ -38,15 +38,11 @@ for (var i = 0; i < 60000; i++) {
 const positionAttribute = new THREE.BufferAttribute(positionArray, 3);
 starsGeo.setAttribute("position", positionAttribute);
 
-var img = new Image();
-img.crossOrigin = "anonymous";
-img.src = "https://portfolio-peach-tau.vercel.app/star.png";
-
 const loader = new THREE.TextureLoader();
 var starMaterial = new THREE.PointsMaterial({
   color: 0xffffff,
   size: 2,
-  map: loader.load(img),
+  map: loader.load(require('star.png')),
   transparent: true,
   sizeAttenuation: true,
   depthWrite: false
