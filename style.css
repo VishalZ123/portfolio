@@ -88,15 +88,7 @@ a:active {
     font-size: 1.2rem;
   }
 }
-@media (min-width:1025px) {
-  .name{
-    font-size: 2.5rem;
-  }
-  #navbar a{
-    margin: 5px 15px;
-    font-size: 1rem;
-  }
-}
+
 @media (min-width:1500px) {
   #navbar a {
     font-size: 2rem;
@@ -114,5 +106,15 @@ a:active {
       opacity: 1;
       margin-left: 0px;
     }
+  }
+}
+
+@media (min-width:1025px) {
+  .name{
+    font-size: 2.5rem;
+  }
+  #navbar a{
+    margin: 5px 15px;
+    font-size: 1rem;
   }
 }
