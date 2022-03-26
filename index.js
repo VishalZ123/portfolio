@@ -42,7 +42,7 @@ const loader = new THREE.TextureLoader();
 var starMaterial = new THREE.PointsMaterial({
   color: 0xffffff,
   size: 2,
-  map: loader.load('public/star.png'),
+  map: loader.load('star.png'),
   transparent: true,
   sizeAttenuation: true,
   depthWrite: false
