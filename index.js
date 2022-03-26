@@ -39,7 +39,7 @@ const positionAttribute = new THREE.BufferAttribute(positionArray, 3);
 starsGeo.setAttribute("position", positionAttribute);
 
 var img = new Image();
-img.crossOrigin = "";
+img.crossOrigin = "anonymous";
 img.src = "https://github.com/VishalZ123/portfolio/blob/WEBD/star.png?raw=true";
 
 const loader = new THREE.TextureLoader();
