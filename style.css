@@ -31,10 +31,10 @@ canvas {
 }
 #navbar a {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin: 5px 6px;
   padding: auto;
-  font-family: 'Balsamiq Sans', cursive;
+  font-family: 'Gilroy Bold', cursive;
   font-size: 0.5rem;
 }
 a,
@@ -55,7 +55,7 @@ a:active {
   top: 40%;
   right: 50%;
   color: #fff;
-  font-family: 'Montreal-medium', sans-serif;
+  font-family: 'Gilroy Medium';
   font-size: 1rem;
 }
 .hello{

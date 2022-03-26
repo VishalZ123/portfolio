@@ -1,5 +1,4 @@
 import * as THREE from "three";
-// import { Vector3 } from "three";
 import { TrackballControls } from "three/examples/jsm/controls/TrackballControls";
 const scene = new THREE.Scene();
 scene.background = new THREE.Color("rgb(20, 20, 20)");
@@ -22,7 +21,7 @@ app.appendChild(renderer.domElement);
 // controls
 let controls = new TrackballControls(camera, renderer.domElement);
 controls.rotateSpeed = 0.5;
-controls.zoomSpeed = 0.5;
+controls.zoomSpeed = 0;
 controls.panSpeed = 0.0;
 
 //wireframe
@@ -39,16 +38,15 @@ for (var i = 0; i < 60000; i++) {
 const positionAttribute = new THREE.BufferAttribute(positionArray, 3);
 starsGeo.setAttribute("position", positionAttribute);
 
-const corsImage = new Image();
-corsImage.crossOrigin = "Anonymous";
-corsImage.src = "/star.png";
 
 const loader = new THREE.TextureLoader();
 var starMaterial = new THREE.PointsMaterial({
   color: 0xffffff,
-  size: 1,
-  map: loader.load(corsImage),
-  transparent: true
+  size: 2,
+  map: loader.load('./star.png'),
+  transparent: true,
+  sizeAttenuation: true,
+  depthWrite: false
 });
 var stars = new THREE.Points(starsGeo, starMaterial);
 scene.add(stars);
@@ -66,7 +64,7 @@ wireframe.rotateZ(2 * Math.PI * rx);
 wireframe.rotateY(2 * Math.PI * ry);
 wireframe.rotateX(2 * Math.PI * rz);
 
-let a = 1.5;
+let a = 1;
 let frame = 0;
 //animate and render
 function animate() {
@@ -100,6 +98,7 @@ function animate() {
   controls.update();
 }
 animate();
+
 //responsive
 window.onresize = () => {
   camera.aspect = innerWidth / innerHeight;
