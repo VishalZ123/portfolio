@@ -1,14 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
 
 body {
   margin: 0;
-  background-color: #fff;
+  background-color: rgb(20, 20, 20);
 }
 #app {
   height: 100vh;
   width: 100vw;
 }
+a{
+  text-decoration: none;
+  color: #fff;
+}
 
+/* Canvas */
 canvas {
   height: inherit;
   width: inherit;
@@ -16,6 +21,7 @@ canvas {
   overflow: hidden;
 }
 
+/* Navbar */
 #navbar {
   width: 200px;
   float: right;
@@ -34,10 +40,10 @@ canvas {
   flex-direction: row;
   margin: 5px 6px;
   padding: auto;
-  font-family: 'Gilroy Bold', cursive;
+  font-family: "Gilroy Bold", cursive;
   font-size: 0.5rem;
 }
-a,
+#navbar a,
 a:hover,
 a:focus,
 a:active {
@@ -45,6 +51,8 @@ a:active {
   color: #ffffff;
   text-shadow: 0 0 5px #fff;
 }
+
+/* salutation */
 .fixed-top {
   position: fixed;
   top: 0;
@@ -55,65 +63,149 @@ a:active {
   top: 40%;
   right: 50%;
   color: #fff;
-  font-family: 'Gilroy Medium';
+  font-family: "Gilroy Medium";
   font-size: 1rem;
 }
-.hello{
+.hello {
   animation: showup 2s;
 }
-.rem-text{
+.rem-text {
   animation: slidein 7s;
 }
 @keyframes showup {
-  0%{opacity: 0;}
-  100%{opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @keyframes slidein {
-  0%{
+  0% {
     opacity: 0;
     margin-left: -50px;
   }
-  100%{
+  100% {
     opacity: 1;
     margin-left: 0px;
   }
 }
 
-@media (min-width:500){
-  .name{
+/* about */
+:root {
+  --card-height: 72.5vh;
+  --card-width: calc(1.5 * var(--card-height));
+  --rotate: 0deg;
+  --rotate2: 0deg;
+}
+
+.card {
+  background: #191c29;
+  width: var(--card-width);
+  height: var(--card-height);
+  right: -25vw;
+  top: 50px;
+  padding: 3px;
+  position: relative;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 1.5em;
+  color: rgb(255, 255, 255);
+  /* color: rgb(88 199 250 / 100%); */
+  font-family: "Gilroy Medium";
+}
+
+.card::before {
+  content: "";
+  width: 104%;
+  height: 106%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff 20%,
+    #3c67e3 43%,
+    #4e00c2
+  );
+  position: absolute;
+  z-index: -1;
+  top: -3%;
+  left: -2%;
+
+}
+
+.card::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate2),
+    #5ddcff,
+    #3c67e3 43%,
+    #4e00c2
+  );
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.resume{
+  font-family: "Gilroy Medium";
+  font-size: 1.5em;
+  justify-content: center;
+  /* align-items: center; */
+  /* text-align: center; */
+  display: flex;
+
+}
+.resume span{
+  color: white;
+}
+/* media queries */
+@media (min-width: 500) {
+  .name {
     font-size: 2rem;
   }
-  #navbar a{
+  #navbar a {
     margin: 5px 15px;
     font-size: 1.2rem;
   }
 }
 
-@media (min-width:1500px) {
+@media (min-width: 1500px) {
   #navbar a {
     font-size: 2rem;
     margin: 5px 25px;
   }
-  .name{
+  .name {
     font-size: 6rem;
   }
   @keyframes slidein {
-    0%{
+    0% {
       opacity: 0;
       margin-left: -100px;
     }
-    100%{
+    100% {
       opacity: 1;
       margin-left: 0px;
     }
   }
 }
 
-@media (min-width:1025px) {
-  .name{
+@media (min-width: 1025px) {
+  .name {
     font-size: 2.5rem;
   }
-  #navbar a{
+  #navbar a {
     margin: 5px 15px;
     font-size: 1rem;
   }
