@@ -90,7 +90,24 @@ a:active {
     margin-left: 0px;
   }
 }
-
+.scroll{
+  position: absolute;
+  left:50%;
+  /* content:; */
+}
+/* @keyframes sdb05 {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+} */
 /* about */
 :root {
   --card-height: 72.5vh;
