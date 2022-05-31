@@ -5,8 +5,9 @@ body {
   background-color: rgb(20, 20, 20);
 }
 #app {
+  margin-left:0.1vw;
   height: 100vh;
-  width: 100vw;
+  width: 98vw;
 }
 a{
   text-decoration: none;
@@ -93,21 +94,9 @@ a:active {
 .scroll{
   position: absolute;
   left:50%;
-  /* content:; */
 }
-/* @keyframes sdb05 {
-  0% {
-    transform: rotate(-45deg) translate(0, 0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(-45deg) translate(-20px, 20px);
-    opacity: 0;
-  }
-} */
+
+
 /* about */
 :root {
   --card-height: 72.5vh;
@@ -131,7 +120,6 @@ a:active {
   display: flex;
   font-size: 1.5em;
   color: rgb(255, 255, 255);
-  /* color: rgb(88 199 250 / 100%); */
   font-family: "Gilroy Medium";
 }
 
@@ -178,15 +166,16 @@ a:active {
 .resume{
   font-family: "Gilroy Medium";
   font-size: 1.5em;
+  position: relative;
   justify-content: center;
-  /* align-items: center; */
-  /* text-align: center; */
+  margin-top: 50;
   display: flex;
-
 }
+
 .resume span{
   color: white;
 }
+
 /* media queries */
 @media (min-width: 500) {
   .name {

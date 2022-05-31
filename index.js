@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { TrackballControls } from "three/examples/jsm/controls/TrackballControls";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 const scene = new THREE.Scene();
 scene.background = new THREE.Color("rgb(20, 20, 20)");
 
@@ -19,10 +19,9 @@ renderer.setSize(app.offsetWidth, app.offsetHeight);
 app.appendChild(renderer.domElement);
 
 // controls
-let controls = new TrackballControls(camera, renderer.domElement);
+const controls = new OrbitControls( camera, renderer.domElement );
+controls.enableZoom = false;
 controls.rotateSpeed = 0.5;
-controls.zoomSpeed = 0;
-controls.panSpeed = 0.0;
 
 //wireframe
 var geo = new THREE.EdgesGeometry(new THREE.BoxGeometry(600, 600, 600));
