@@ -62,7 +62,7 @@ wireframe.rotateZ(2 * Math.PI * rx);
 wireframe.rotateY(2 * Math.PI * ry);
 wireframe.rotateX(2 * Math.PI * rz);
 
-let a = 1;
+let a = 2.5;
 let frame = 0;
 //animate and render
 function animate() {
@@ -72,22 +72,22 @@ function animate() {
   stars.rotateY(0.0009 * Math.cos(frame + num));
   stars.rotateX(0.0009 * Math.sin(frame + num));
 
-  stars.position.z += 0.005 * Math.sin(frame + num);
-  stars.position.y += 0.005 * Math.cos(frame + num);
-  stars.position.x += 0.005 * Math.sin(frame + num);
+  stars.position.z += 0.1 * Math.sin(frame + num);
+  stars.position.y += 0.1 * Math.cos(frame + num);
+  stars.position.x += 0.1 * Math.sin(frame + num);
 
   wireframe.rotateZ(0.0009 * Math.sin(frame + num));
   wireframe.rotateY(0.0009 * Math.cos(frame + num));
   wireframe.rotateX(0.0009 * Math.sin(frame + num));
 
-  wireframe.position.z += 0.005 * Math.sin(frame + num);
-  wireframe.position.y += 0.005 * Math.cos(frame + num);
-  wireframe.position.x += 0.005 * Math.sin(frame + num);
+  wireframe.position.z += 0.1 * Math.sin(frame + num);
+  wireframe.position.y += 0.1 * Math.cos(frame + num);
+  wireframe.position.x += 0.1 * Math.sin(frame + num);
 
   if (camera.position.distanceTo(new THREE.Vector3(0, 0, 0)) < 900) {
     camera.position.z += a;
   }
-  if (camera.position.distanceTo(new THREE.Vector3(0, 0, 0)) > 500) {
+  if (camera.position.distanceTo(new THREE.Vector3(0, 0, 0)) > 600) {
     scene.add(wireframe);
   }
 
