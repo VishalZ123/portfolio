@@ -8,7 +8,7 @@ const camera = new THREE.PerspectiveCamera(
   60,
   innerWidth / innerHeight,
   0.1,
-  1200
+  1500
 );
 
 //renderer
@@ -62,8 +62,9 @@ wireframe.rotateZ(2 * Math.PI * rx);
 wireframe.rotateY(2 * Math.PI * ry);
 wireframe.rotateX(2 * Math.PI * rz);
 
-let a = 2.5;
+let velocity = 2.5;
 let frame = 0;
+var origin = new THREE.Vector3(0, 0, 0);
 //animate and render
 function animate() {
   frame += 0.01;
@@ -84,10 +85,10 @@ function animate() {
   wireframe.position.y += 0.1 * Math.cos(frame + num);
   wireframe.position.x += 0.1 * Math.sin(frame + num);
 
-  if (camera.position.distanceTo(new THREE.Vector3(0, 0, 0)) < 900) {
-    camera.position.z += a;
+  if (camera.position.distanceTo(origin) < 900) {
+    camera.position.z += velocity;
   }
-  if (camera.position.distanceTo(new THREE.Vector3(0, 0, 0)) > 600) {
+  if (camera.position.distanceTo(origin) > 600) {
     scene.add(wireframe);
   }
 
