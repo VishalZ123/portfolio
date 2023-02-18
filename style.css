@@ -191,26 +191,39 @@ a:active {
   margin-top: 20vh;
 }
 
-.project{
+.project, .project-inv{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   font-family: "Gilroy Medium";
+  margin: 2rem 0;
 }
-.project img{
+.project-inv{
+  flex-direction: row-reverse;
+}
+.project img, .project-inv img{
   height: 160px;
-  width:200px;
-  object-fit:cover;
+  width:210px;
+  object-fit:fill;
   -webkit-box-reflect:below 2px linear-gradient(to bottom, transparent, #0004);
   transform-origin:center;
   transform:perspective(800px) rotateY(25deg);
   transition:0.5s;
 }
-
-.project img:hover {
+.project-inv img{
+  transform:perspective(800px) rotateY(-25deg);
+}
+.project img:hover, .project-inv img:hover {
   transform:perspective(800px) rotateY(0deg);
   opacity:1;
+}
+.project-heading{
+  font-size: 3rem;
+  color: #fff;
+  font-family: "Gilroy Medium";
+  align-self: center;
+  margin: 2rem 0;
 }
 
 .project-body{
@@ -226,7 +239,10 @@ a:active {
 .project-description{
   color: rgb(140, 140, 140);
   font-size: 1rem;
+}
 
+.project-links{
+  color: #fff;
 }
 
 /* media queries */
@@ -266,4 +282,3 @@ a:active {
     }
   }
 }
-
